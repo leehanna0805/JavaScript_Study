@@ -3,9 +3,29 @@
 <head>
 <meta charset="EUC-KR">
 <title>dataTable 플러그인 활용</title>
+
+<link rel="stylesheet" href="media/css/demo_table_jui.css">
+<link rel="stylesheet" href="media/css/demo_page.css">
+<link rel="stylesheet" href="media/css/demo_table.css">
+
+<!-- 코딩 순서가 중요! jQuery부터하고 플러그인! -->
+<!-- jQuery 인클루드  -->
+<script src="js/jquery.js"></script>
+
+<!-- jQuery 플러그인 인클루드 -->
+<script src="media/js/jquery.dataTables.js"></script>
+
+<!-- jQuery 적용 -->
+<script>
+	$(function(){
+		$("#example").dataTable();
+	});
+</script>
+
+
 </head>
 <body>
-	<table>
+	<table class="display" id="example">
 	  <thead>
 	    <tr><th>번호</th><th>과일명</th><th>가격</th><th>설명</th></tr>
 	  </thead>
@@ -65,7 +85,7 @@
 	 </tbody>
 	 <tfoot align="center">
 	   <tr>
-	     <td colspan="4"><b>2020년 05월 15일 작성</b></td>
+	     <td colspan="4"><b>2021년 10월 15일 작성</b></td>
        </tr>
      </tfoot>
   </table>
