@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>rotate jQuery 플러그인 활용; 영화예매 사이트</title>
+<style>
+	.divHeight { float:left; }    /*float: 한줄로 늘어놓는 속성 .=클래스에 스타일 적용*/
+	img { width:150px; height:200px; }
+</style>
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery.rotator.js"></script>
+
+<script>
+	$(document).ready(function(){
+		$("#rotator1").rotator({ ms:1000 });  //1초(1000)간격으로 회전시켜라
+	});
+</script>
+
+</head>
+<body>
+	<h2>CGV 현재상영/개봉예정</h2>
+	<div id="rotator1">
+		<div class="divHeight">
+			<img src="images/베놈2.jpg" hspace="20">
+			<br><center><b>베놈 2</b></center>
+		</div>
+		<div class="divHeight">
+			<img src="images/노타임투다이.jpg" hspace="20">
+			<br><center><b>No time to die</b></center>
+		</div>
+		<div class="divHeight">
+			<img src="images/십개월의미래.jpg" hspace="20">
+			<br><center><b>십개월의 미래</b></center>
+		</div>
+		<div class="divHeight">
+			<img src="images/타다.jpg" hspace="20">
+			<br><center><b>타다</b></center>
+		</div>
+	</div>
+	<br><br><br><br><br>
+	<div id="movieselect">
+		<b>영화선택</b>
+		<select name="movie">
+			<option selected>영화선택</option>
+			<option>베놈 2</option>
+			<option>No time to die</option>
+			<option>십개월의 미래</option>
+			<option>타다</option>
+		</select>
+	</div>
+</body>
+</html>
