@@ -18,6 +18,12 @@
 			response.sendRedirect("welcome.jsp");	//welcome.jsp로 이동
 		}
 	}
+	
+	if(i == users.length){ //일치하는 id 못찾고 for문 끝난 경우
+		//history 내장객체. go(-1):이전페이지로 돌아가라
+		out.println("<script>alert('아이디가 일치하지 않습니다.');history.go(-1);</script>");
+	}
+	
 %>
 
 <!DOCTYPE html>
