@@ -34,12 +34,8 @@
 	이름: ${param.name}<br><br>
 	선택과목: <br>
 	<c:forEach var="item" items="${paramValues.lang}">
-  		<c:out value="${item}" /><br>
+  		${item}<br>
 	</c:forEach>
-
-	
-	
-	
 	
 </body>
 </html>
