@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>dynamic multi form 페이지</title>
 <script>
-	var count = 1; //전역변수
+	var count = 1; //전역변수(파일이름용)
 	
 	function checkSize(input){
 		if(input.files && input.files[0].size > (20*1024*1024)){
