@@ -23,11 +23,12 @@
 	if(user != null){ //인증성공
 		//세션에 id 저장
 		session.setAttribute("IdK", id); //여기서 저장해놓은걸 getBoardList.jsp에서도 사용함 !!
-		out.println("<script>alert('로그인 성공');</script>");
-	
+		//out.println("<script>alert('로그인 성공');</script>");
+		response.sendRedirect("getBoardList.jsp");
+		
 	}else{//null값이면 인증 실패
-		out.println("<script>alert('로그인 실패');</script>");
-			
+		//out.println("<script>alert('로그인 실패');</script>");
+		response.sendRedirect("login.jsp");
 	}
 %>
 
