@@ -5,6 +5,8 @@
 <%@ page import="board.BoardDAO" %>
 <%@ page import="java.util.List" %>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <% 
 	request.setCharacterEncoding("UTF-8");
 	
@@ -67,7 +69,7 @@
 				<th bgcolor="orange" width="100">조회수</th>
 			</tr>
 		
-		<!-- 방법1 (표현식 사용) -->
+		<%-- 방법1 (표현식 사용)
 		<% for(BoardDO board : boardList){ %>
 			<tr>
 				<td align="center"><%= board.getSeq() %></td>
@@ -78,6 +80,19 @@
 				<td align="center"><%= board.getCnt() %></td>
 			</tr>
 		<% } %>	
+		--%>
+		
+		<%-- 방법2 (JSTL+표현언어 사용) --%>
+        <c:forEach var="board" items="${boardList}">
+        	<tr>
+            	<td align="center">${board.seq}</td>
+            	<td align="left"><a href="getBoard.jsp?seq=${board.seq}">${board.title}</a></td>
+                <td align="center">${board.writer}</td>
+                <td align="center">${board.regDate}</td>
+                <td align="center">${board.cnt}</td>
+           </tr>      
+        </c:forEach>
+		
 		
 		</table>
 		<br>
