@@ -16,7 +16,7 @@ public class UserDAO {
 	private final String USER_GET = "select id, password from users where id=? and password=?";
 	
 	//로그인 user 조회(select) 메소드 구현
-	public UserDO getUser(UserDO userObj) {
+	public UserDO getUser(UserDO userObj) {	//login_proc.jsp에서 사용
 		UserDO user = null;
 		
 		try {
