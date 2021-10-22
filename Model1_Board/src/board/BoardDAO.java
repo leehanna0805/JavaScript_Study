@@ -27,9 +27,12 @@ public class BoardDAO {
 			// 게시물 검색 시 '제목' or '작성자'로 검색조건 제시하는 SQL만들기
 			// 검색 조건 없으면 전체를 최신순 정렬해서 보여줌. 검색 조건 있으면 조건맞게 정렬해서 보여줌.
 			String where="";
-			if(searchField != null && searchText !=null){
-				where = "where" + searchField + "like '%" + searchText + "%'";
+			
+			if(searchField != null && searchText != null){
+				where = "where " + searchField + " like '%" + searchText + "%'";
+			
 			}
+			
 			String Condition_SQL = "select * from board " + where + " order by seq desc;";
 			pstmt = conn.prepareStatement(Condition_SQL);
 			rs = pstmt.executeQuery();
