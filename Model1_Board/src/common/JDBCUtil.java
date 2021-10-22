@@ -11,7 +11,7 @@ public class JDBCUtil {
 	//나중에 서비스할때 oracle로 바꿔서 배포하면 댐
 	static final String url = "jdbc:h2:tcp://localhost/~/test"; 
 	
-	public static Connection getConnection() throws Exception{
+	public static Connection getConnection() throws Exception{	//UserDAO에서 사용
 		try {
 			Class.forName(driver);
 			Connection con = DriverManager.getConnection(url, "sa", "");
