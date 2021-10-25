@@ -14,7 +14,7 @@ public class JDBCUtil {
 	public static Connection getConnection() throws Exception{	//UserDAO에서 사용
 		try {
 			Class.forName(driver);
-			Connection con = DriverManager.getConnection(url, "sa", "");
+			Connection con = DriverManager.getConnection(url, "sa", ""); //url, id, pw
 			return con;
 		}catch(Exception e){
 			e.printStackTrace();
