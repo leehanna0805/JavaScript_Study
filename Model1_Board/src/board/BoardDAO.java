@@ -139,4 +139,27 @@ public class BoardDAO {
 			JDBCUtil.close(pstmt, conn);
 		}
 	}
+	//======================================================================================================
+	
+		//게시글 추가 처리 메소드
+		public void insertBoard(BoardDO boardDO) {
+			System.out.println("===> insertBoarD() 처리됨!");
+			
+			try {
+				conn = JDBCUtil.getConnection();
+				
+				String BOARD_INSERT="insert into board(seq, title, writer, content) "
+						+ "values((select nvl(max(seq),0)+1 from board),?,?,?)"; //nvl함수 이용해서 게시글 번호 생성
+				pstmt = conn.prepareStatement(BOARD_INSERT);
+				pstmt.setString(1, boardDO.getTitle());
+				pstmt.setString(2, boardDO.getWriter());
+				pstmt.setString(3, boardDO.getContent());
+				pstmt.executeUpdate();
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				JDBCUtil.close(pstmt, conn);
+			}
+		}
 }
