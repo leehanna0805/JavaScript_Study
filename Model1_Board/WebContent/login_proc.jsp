@@ -1,12 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" errorPage="error.jsp"%> <!-- 에러jsp페이지 추가 -->
-
+<!-- 자바 클래스 임포트 -->
 <%@ page import="user.UserDO" %>
 <%@ page import="user.UserDAO" %>
 
 <%
-	
-
 	//1. 사용자 입력 정보 추출
 	String id = request.getParameter("id");
 	String password = request.getParameter("password");
